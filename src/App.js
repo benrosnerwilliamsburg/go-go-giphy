@@ -26,7 +26,7 @@ async getGifData() {
     const response = await axios.get(`${config.API_URL}?api_key=${config.API_TOKEN}&q=${this.state.searchValue}`);
     const results = response.data;
     this.setState(state => ({
-      gifs: [...state.searchResult, ...results],
+      gifs: [...state.searchResult, ...results]
     }));
   } catch (error) {
     console.error(error);
@@ -48,21 +48,21 @@ async handleSearchSubmit(event) {
 
 async handleSearchResultClick(gifs) {
   await this.setState(state => ({
-    searchValue: [...state.searchValue, gifs],
+    searchValue: [...state.searchValue, gifs]
   }));
   await this.getGifData;
 }
 
 handleChange(event) {
   this.setState({
-    searchValue: event.target.value,
+    searchValue: event.target.value
   });
 }
 
 async componentDidMount() {
   await this.getGifData();
   await this.setState(state => ({
-    isLoaded: !state.isLoaded,
+    isLoaded: !state.isLoaded
   }));
 }
 
