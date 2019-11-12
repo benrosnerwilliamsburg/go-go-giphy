@@ -4,11 +4,12 @@ import './Search.css';
 
 
 function Search(props) {
+  console.log('props', props)
   return (
     <>
       <div className="search-container">
-        <form onSubmit={event => props.onSubmit(event)}>
-          <input type="text" className="search-input" value={props.value} name={props.name} onChange={event => props.onChange(event)} placeholder="Search for GIFs" />
+        <form onSubmit={props.getGifData}>
+          <input type="text" className="search-input" value={props.value} name={props.name} onChange={props.handleChange} placeholder="Search for GIFs" />
           <button className="container-button">Go Go Giphy!</button>
         </form>
       </div>
