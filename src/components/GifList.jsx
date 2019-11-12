@@ -9,7 +9,7 @@ const GifList = (props) => {
     return(
       <div onClick={() => props.handleFavorite(gif)} key={i} className="image">
         <img id={gif.id} src={gif.images.fixed_width.url} className="image" alt={gif.images.slug} />
-        {isFavorite ? <span>&hearts;</span> : ""} 
+        {isFavorite ? <span> &hearts;</span> : ""} 
       </div>
     )
   });
