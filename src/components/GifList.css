@@ -6,3 +6,22 @@
 span{
     display: flex;
 }
+
+
+@media only screen and (max-width: 375px) {
+    .gif-list{
+        justify-content: center;
+    }	
+}
+
+@media only screen and (max-width: 736px) {
+	.gif-list{
+        justify-content: center;
+    }	
+}
+
+@media only screen and (max-width: 1024px) {
+	.gif-list{
+        justify-content: center;
+    }	
+}

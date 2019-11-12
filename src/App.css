@@ -45,6 +45,13 @@ a {
 
 
 @media only screen and (max-width: 375px) {
+	.header{
+		display: flex;
+		justify-content: center;
+		font-family: 'Signika';
+		font-size: 5vw;
+		color: crimson;
+	}
 	.search-container{
 		display: flex;
 		justify-content: center;
@@ -52,6 +59,13 @@ a {
 }
 
 @media only screen and (max-width: 736px) {
+	.header{
+		display: flex;
+		justify-content: center;
+		font-family: 'Signika';
+		font-size: 5vw;
+		color: crimson;
+	}
 	.search-container{
 		display: flex;
 		justify-content: center;
@@ -59,6 +73,13 @@ a {
 }
 
 @media only screen and (max-width: 1024px) {
+	.header{
+		display: flex;
+		justify-content: center;
+		font-family: 'Signika';
+		font-size: 5vw;
+		color: crimson;
+	}
 	.search-container{
 		display: flex;
 		justify-content: center;
