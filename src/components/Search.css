@@ -18,3 +18,36 @@
   	border-radius: 5px;
   	margin: 10px;
 }
+
+@media only screen and (max-width: 375px) {
+	.search-input {
+		width: 40vw;
+		padding: 2vw;
+	}
+	.container-button {
+		width: 20vw;
+		padding: 2vw;
+	}
+}
+
+@media only screen and (max-width: 736px) {
+	.search-input {
+		width: 40vw;
+		padding: 2vw;
+	}
+	.container-button {
+		width: 20vw;
+		padding: 2vw;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.search-input {
+		width: 40vw;
+		padding: 2vw;
+	}
+	.container-button {
+		width: 20vw;
+		padding: 2vw;
+	}
+}

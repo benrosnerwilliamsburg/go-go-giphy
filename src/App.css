@@ -7,9 +7,24 @@ body {
 .app-container {
 	padding-top: 50px;
 }
-.container-image {
-	width: 30%;
-	display: block;
-	float: left;
-	margin-right: 3%;
+
+@media only screen and (max-width: 375px) {
+	.search-container{
+		display: flex;
+		justify-content: center;
+	}
+}
+
+@media only screen and (max-width: 736px) {
+	.search-container{
+		display: flex;
+		justify-content: center;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.search-container{
+		display: flex;
+		justify-content: center;
+	}
 }

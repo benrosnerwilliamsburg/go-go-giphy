@@ -17,23 +17,15 @@ class App extends React.Component {
       favorites: []
     };
   this.getGifData = this.getGifData.bind(this);
-  // this.handleSearchSubmit = this.handleSearchSubmit.bind(this)
   this.handleSearchResultClick = this.handleSearchResultClick.bind(this)
   this.handleChange = this.handleChange.bind(this);
   this.handleFavorite = this.handleFavorite.bind(this);
 }
 
-async handleFavorite(id) {
-  this.setState(state => ({
-    favorites: [...state.favorites, id]
-  }))
-}
-async getGifData(event,searchValue) {
+async getGifData(event) {
   event.preventDefault()
   try {
     const response = await axios.get(`${config.API_URL}?api_key=${config.API_TOKEN}&q=${this.state.searchValue}`)
-    console.log(response)  
-      console.log('response',response)
         this.setState({
             results: response.data.data
         })
@@ -42,19 +34,6 @@ async getGifData(event,searchValue) {
     console.error(error);
   }
 }
-
-// async handleSearchSubmit(event) {
-//   event.preventDefault();
-//   try {
-//     const response = await axios.get(`${config.API_URL}?api-key=${config.API_TOKEN}&q=${this.state.searchValue}`);
-//     const searchResult = response.data.results;
-//     this.setState({
-//       gifs: searchResult
-//     });
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
 
 async handleSearchResultClick(gifs) {
   await this.setState(state => ({
@@ -69,8 +48,13 @@ handleChange(event) {
   });
 }
 
+async handleFavorite(id) {
+  this.setState(state => ({
+    favorites: [...state.favorites, id]
+  }))
+}
+
 async componentDidMount() {
-  // await this.getGifData();
   await this.setState(state => ({
     isLoaded: !state.isLoaded
   }));
@@ -80,7 +64,7 @@ render() {
   return (
     <div className="App">
       <div className="search-container">
-      <Search getGifData={this.getGifData} handleChange={this.handleChange}/>
+        <Search getGifData={this.getGifData} handleChange={this.handleChange}/>
       </div>
       <div className="gif-list">
         <GifList handleFavorite={this.handleFavorite} gifs={this.state.results} favorites={this.state.favorites} />
