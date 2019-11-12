@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Signika&display=swap');
 body {
 	width: 80%;
 	max-width: 1024px;
@@ -7,6 +8,41 @@ body {
 .app-container {
 	padding-top: 50px;
 }
+
+.header{
+	display: flex;
+	justify-content: center;
+	font-family: 'Signika';
+	font-size: 36px;
+	color: crimson;
+}
+
+.nav-bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	text-align: center;
+	font-family: 'Signika', sans-serif;
+	font-size: 20px;
+}
+
+a {
+	text-decoration: none;
+}
+.nav-bar a:hover {
+	background-color: coral;
+}
+
+.nav-bar a:visited {
+	background-color: crimson;
+  }
+
+
+  
+.home-link{
+	margin-right: 10px;
+}
+
 
 @media only screen and (max-width: 375px) {
 	.search-container{

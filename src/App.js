@@ -1,8 +1,11 @@
 import React from 'react';
 import axios from 'axios';
+import { Route, Link } from 'react-router-dom';
+
 import Search from './components/Search'
 import config from './components/config'
 import GifList from './components/GifList'
+import Favorites from './components/Favorites'
 import './App.css';
 
 
@@ -63,11 +66,26 @@ async componentDidMount() {
 render() {
   return (
     <div className="App">
+      <div className="header">
+        <h1>Go Go Giphy</h1>
+      </div>
+      <div className="nav-bar">
+        <div className="home-link">
+          <Link to="/">Home</Link>
+        </div>
+        <div className="favorites-link">
+          <Link to="/Favorites">Favorites</Link>
+        </div>
+      </div>
       <div className="search-container">
         <Search getGifData={this.getGifData} handleChange={this.handleChange}/>
       </div>
       <div className="gif-list">
-        <GifList handleFavorite={this.handleFavorite} gifs={this.state.results} favorites={this.state.favorites} />
+      { this.state.isLoaded
+          && <Route exact path="/" render={() =>
+            (<GifList handleFavorite={this.handleFavorite} gifs={this.state.results} favorites={this.state.favorites} />)} />
+      }
+        <Route path="/Favorites" render={() => (<Favorites favorites={this.state.favorites}/>)} />
       </div>
     </div>
   );
