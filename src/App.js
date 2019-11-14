@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Route, Link } from 'react-router-dom';
 
 import Search from './components/Search';
-import config from './components/config';
+import config from './config';
 import GifList from './components/GifList';
 import Favorites from './components/Favorites';
 import './App.css';
@@ -13,7 +13,6 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchValue: '',
-      isLoaded: false,
       results: [],
       favorites: [],
     };
