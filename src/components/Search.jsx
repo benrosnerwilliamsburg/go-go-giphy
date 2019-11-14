@@ -6,7 +6,14 @@ function Search(props) {
     <>
       <div className="search-container">
         <form onSubmit={props.getGifData}>
-          <input type="text" className="search-input" value={props.value} name={props.name} onChange={props.handleChange} placeholder="Search for GIFs" />
+          <input
+            type="text"
+            className="search-input"
+            value={props.value}
+            name={props.name}
+            onChange={props.handleChange}
+            placeholder="Search for GIFs"
+          />
           <button className="container-button">Go Go Giphy!</button>
         </form>
       </div>
