@@ -15,6 +15,7 @@ class App extends React.Component {
       searchValue: '',
       results: [],
       favorites: [],
+      fetching: false
     };
 
     this.getGifData = this.getGifData.bind(this);
@@ -28,19 +29,17 @@ class App extends React.Component {
     const { searchValue } = this.state;
 
     try {
-      // TODO: Before making the request, set state to fetching: true and show some sort
-      // of loading indication like: fetching gifs... or a spinner.
+      this.setState({
+        fetching: true
+      })
       const response = await axios.get(
         `${config.API_URL}?api_key=${config.API_TOKEN}&q=${searchValue}`,
       );
-
+        
       this.setState({
-        results: response.data.data,
+        results: response.data.data
       });
     } catch (error) {
-      // TODO(SW): Add error handling logic so that if the request to giphy some sort
-      // of failure message is shown. Something like:
-      // 'Uups something went wrong..., try again!'.
       console.error(error);
     }
   }
@@ -52,8 +51,6 @@ class App extends React.Component {
   }
 
   async handleFavorite(id) {
-    // TODO: Add logic so that gifs that were already added are not re-added.
-    // If id already exists in the array then do nothing and return.
     this.setState((state) => ({
       favorites: [...state.favorites, id],
     }));
