@@ -73,9 +73,9 @@ render() {
         <div className="home-link">
           <Link to="/">Home</Link>
         </div>
-        <div className="favorites-link">
-          <Link to="/Favorites">Favorites</Link>
-        </div>
+          <div className="favorites-link">
+            <Link to="/Favorites">Favorites</Link>
+          </div>
       </div>
       <div className="search-container">
         <Search getGifData={this.getGifData} handleChange={this.handleChange}/>
